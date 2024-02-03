@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        padding: 30px;
+        padding-left: 200px;
+        background-color: black;
+        color: white;
+       }
+       #container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        
+       }
+       p{
+        font-size: 30px;
+       }
+       textarea{
+        font-size: 20px;
+       }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h1>Enter the text in the below box</h1>
+    <textarea name="input" id="ta" cols="60" rows="20"></textarea>
+    <p>No of chars:<span id="chars">00</span>&nbsp;&nbsp;no of words:<span id="words">00</span></p>
+    </div>
+     <script>
+        let elm=document.getElementById("ta");
+        elm.addEventListener('input',function(){
+            let w=0;
+            let c=this.value;
+            document.getElementById("chars").innerHTML=c.split(" ").join().length;
+            w=c.split(" ");
+            let k=w.filter(function(elem){
+                return elem!="";
+            })
+            document.getElementById("words").innerHTML=k.length;
+        
+
+           
+
+        })
+     </script>
+</body>
+</html>
